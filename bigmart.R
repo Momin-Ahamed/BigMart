@@ -274,10 +274,9 @@ corrplot(cor_train, method = "pie", type = "lower", tl.cex = 0.9)
 
 #Modeling
 
+#amar random forerst and xgboast use korbo..
     #Linear Regression
-    #Lasso Regression
-    # Ridge Regression
-    # RandomForest
+   # RandomForest
     # XGBoost
 #******************************Linear Regression
 
@@ -327,6 +326,7 @@ plot(varImp(rf_mod))
 dev.off()
 
 #*****************XGBoost Model********************
+?
 param_list = list(
   
   objective = "reg:linear",
@@ -336,6 +336,7 @@ param_list = list(
   subsample=0.8,
   colsample_bytree=0.5
 )
+###??xgb.DMatrix() **amara function somporke jante pari
 dtrain = xgb.DMatrix(data = as.matrix(train[,-c("Item_Identifier", "Item_Outlet_Sales")]), label= train$Item_Outlet_Sales)
 dtest = xgb.DMatrix(data = as.matrix(test[,-c("Item_Identifier")]))
 set.seed(112)
